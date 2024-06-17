@@ -1,0 +1,11 @@
+Estimado/a {tecnico_nombre},
+
+Le informamos que el documento '{archivo}' ha sido retirado de nuestro sistema. Esta acción se ha tomado porque el manual es muy antiguo y ya no es funcional o por otras causas justificadas.
+
+Agradecemos su comprensión y le recomendamos que revise los documentos actuales para obtener la información más actualizada.
+
+Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Saludos cordiales,
+
+@Heimdall

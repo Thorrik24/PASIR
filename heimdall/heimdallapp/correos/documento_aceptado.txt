@@ -1,0 +1,13 @@
+Estimado/a {tecnico_nombre},
+
+Nos complace informarle que el documento '{archivo}' ha sido aceptado con éxito. Agradecemos su dedicación y esfuerzo en la elaboración y presentación de este documento.
+
+Su contribución es muy valiosa para nosotros y estamos agradecidos por su compromiso y profesionalismo. 
+
+Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Gracias una vez más por su excelente trabajo.
+
+Saludos cordiales,
+
+@Heimdall

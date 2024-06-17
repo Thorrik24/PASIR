@@ -1,0 +1,13 @@
+Estimado/a {tecnico_nombre},
+
+Le informamos que el documento '{archivo}' ha sido creado con éxito. Por favor, tenga en cuenta que un administrador debe revisar y aprobar este documento antes de que se pueda proceder con los siguientes pasos.
+
+Agradecemos su colaboración y paciencia durante este proceso.
+
+Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Gracias por su atención.
+
+Saludos cordiales,
+
+@Heimdall

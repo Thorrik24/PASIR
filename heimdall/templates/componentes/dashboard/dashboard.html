@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block titulo %}HEIMDALL{% endblock titulo %}
+{% block dashboard %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock dashboard %}
+
+{% block contenido %}
+
+<div class="contenedor-graficas">
+    <div class="TARJETAS">
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Filtros</h5>
+              <form method="GET" action="{% url 'dash:dashboard' %}" class="form-inline mb-3">
+                <div class="form-group">
+                    <label for="rango1" class="">Desde:</label>
+                    <input type="datetime-local" class="form-control" id="rango1" name="rango1">
+                </div>
+                <div class="form-group mr-2">
+                    <label for="rango2" class="mr-1">Hasta:</label>
+                    <input type="datetime-local" class="form-control" id="rango2" name="rango2">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-1 ml-5">Aplicar Filtro</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Total de tickets</h5>
+              <p class="fs-1">{{cantidad_tickets}}</p>
+            </div>
+          </div>
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Total de tickets resueltos</h5>
+              <p class="fs-1">{{cantidad_tickets_resueltos}}</p>
+            </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Total de tickets sin resolver</h5>
+              <p class="fs-1">{{cantidad_tickets_no_resueltos}}</p>
+            </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Tickets a la espera de confirmación</h5>
+              <p class="fs-1">{{cantidad_tickets_sin_confirmar}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="GRAFICA1">
+        {% autoescape off %}
+    
+            {{ g2 }}
+            
+        {% endautoescape %}
+    </div>
+    <div class="GRAFICA2">
+        {% autoescape off %}
+    
+            {{ g1 }}
+            
+        {% endautoescape %}
+    </div>
+    <div class="GRAFICA3">
+        {% autoescape off %}
+    
+            {{ g3 }}
+            
+        {% endautoescape %}
+    </div>
+    <div class="GRAFICA4">
+        {% autoescape off %}
+    
+            {{ g6 }}
+            
+        {% endautoescape %}
+    </div>
+    <div class="GRAFICA5">
+        {% autoescape off %}
+    
+            {{ g4 }}
+            
+        {% endautoescape %}
+    </div>
+
+    <div class="GRAFICA6">
+        {% autoescape off %}
+    
+            {{ g5 }}
+            
+        {% endautoescape %}
+    </div>
+    
+</div>
+<script>
+    // Función que recarga la página
+    function recargarPagina() {
+        window.location.reload();
+    }
+
+    // Llamada a la función recargarPagina cada 5 segundos (5000 ms)
+    setInterval(recargarPagina, 60000);
+</script>
+{% endblock contenido %}

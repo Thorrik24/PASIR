@@ -1,0 +1,16 @@
+
+Estimado/a {tecnico_nombre},
+
+Lamentamos informarle que el documento '{archivo}' ha sido rechazado y eliminado de nuestro sistema. Las causas del rechazo pueden incluir, pero no se limitan a, los siguientes motivos:
+
+- El contenido no es válido.
+- Problemas con el formato, como el sangrado, el tipo o tamaño de letra.
+- Otros problemas de calidad o relevancia.
+
+Agradecemos su esfuerzo y le invitamos a corregir los problemas mencionados y presentar nuevamente el documento para su revisión.
+
+Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Saludos cordiales,
+
+@Heimdall

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Eliminar Ticket{% endblock titulo %}
+{% block contenido %}
+
+<div class="row justify-content-center mt-5 text-center">
+    <div class="col-md-6">
+        <h1>¿Estás seguro de eliminar el ticket?</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock contenido %}

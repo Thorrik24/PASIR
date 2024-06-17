@@ -1,0 +1,16 @@
+{% extends "./base_ticket.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}CERRAR TICKET{% endblock titulo %}
+{% block componente %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock componente %}

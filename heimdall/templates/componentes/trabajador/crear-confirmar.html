@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}
+    {% if pagina == 'CREAR' %}
+        Crear Ticket
+    {% elif pagina == 'CONFIRMAR' %}
+        Confirmar Ticket
+    {% endif %}
+{% endblock titulo %}
+
+{% block contenido %}
+<section class="ftco-section">
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        {% if pagina == 'CREAR' %}
+            <h1>Crear Ticket</h1>
+        {% elif  pagina == 'CONFIRMAR' %}
+            <h1>Confirmar Ticket</h1>
+        {% endif %}
+        <form novalidate method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if pagina == 'CONFIRMAR' %}
+            <button type="submit" class="btn btn-primary">Confirmar Envio</button>
+            {% else %}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            {% endif %}
+            
+        </form>
+    </div>
+</div>
+</div>
+</section>
+{% endblock contenido %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#id_categoria').change(function() {
+            var categoria_id = $(this).val();
+            if (categoria_id) {
+                $.ajax({
+                    url: '/informacion/obtener_subcategorias/',
+                    data: {
+                        'categoria_id': categoria_id
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#id_subcategoria').empty();
+                        $.each(data.subcategorias, function(key, value) {
+                            $('#id_subcategoria').append('<option value="' + value.id + '">' + value.subcategoria + '</option>');
+                        });
+                    }
+                });
+            } else {
+                $('#id_subcategoria').empty();
+            }
+        });
+    });
+</script>
+{% endblock scripts %}

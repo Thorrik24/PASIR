@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block titulo %}PERFIL{% endblock titulo %}
+
+{% block contenido %}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mt-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Perfil de Usuario</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-4 text-center my-auto"> <!-- Centro verticalmente en pantallas pequeñas -->
+                                {% if object.empresa == 'CORERIFT' %}
+                                    <img src="{% static 'img/corerift.png' %}" class="img-fluid rounded" alt="Logo de CORERIFT">
+                                {% elif object.empresa == 'SOLTECK' %}
+                                    <img src="{% static 'img/solteck.png' %}" class="img-fluid rounded" alt="Logo de SOLTECK">
+                                {% elif object.empresa == 'EMERALSOLUTIONS' %}
+                                    <img src="{% static 'img/emeral.png' %}" class="img-fluid rounded" alt="Logo de EMERALSOLUTIONS">
+                                {% elif object.empresa == 'CYBERWAVE' %}
+                                    <img src="{% static 'img/cyberwave.png' %}" class="img-fluid rounded" alt="Logo de CYBERWAVE">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Nombre de usuario</label>
+                                                <input type="text" id="username" class="form-control" value="{{ object.username }}" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input type="text" id="nombre" class="form-control" value="{{ object.first_name }}" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="apellido" class="form-label">Apellido</label>
+                                                <input type="text" id="apellido" class="form-control" value="{{ object.last_name }}" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" id="email" class="form-control" value="{{ object.email }}" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="telefono" class="form-label">Teléfono</label>
+                                                <input type="text" id="telefono" class="form-control" value="{{ object.telefono }}" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="empresa" class="form-label">Empresa</label>
+                                                <input type="text" id="empresa" class="form-control" value="{{ object.empresa }}" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock contenido %}

@@ -1,0 +1,32 @@
+{% extends "./base_ticket.html" %}
+{% block titulo %}REGISTRO DE CAMBIOS{% endblock titulo %}
+{% block componente %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Tecnico</th>
+          <th>Operacion</th>
+          <th>Escalado</th>
+          <th>Motivo</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for registro in historial %}
+        <tr>
+            <td>{{registro.tecnico}}</td>
+            <td>{{registro.operacion}}</td>
+            {% if registro.escalado_a %}
+            <td>{{ registro.escalado_a }}</td>
+            {% else %}
+            <td></td>
+            {% endif %}
+            <td>{{registro.descripcion}}</td>
+            <td>{{registro.fecha_operacion}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+
+{% endblock componente %}

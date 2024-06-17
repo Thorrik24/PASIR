@@ -1,0 +1,18 @@
+Estimado/a {usuario_nombre},
+
+Le informamos que su ticket con el nº de incidencia '{ticket_id}' ha sido creado con éxito. Para proceder con la revisión de su solicitud, necesitamos que confirme la creación del ticket.
+
+Por favor, haga clic en el siguiente enlace para confirmar su ticket:
+{enlace}
+
+Nuestro equipo de soporte revisará su solicitud una vez que hayamos recibido su confirmación.
+
+Agradecemos su colaboración y comprensión.
+
+Si tiene alguna pregunta adicional o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Gracias por su atención.
+
+Saludos cordiales,
+
+@Heimdall

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block titulo %}{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="contenedor">
+    <div class="INFO">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-submenu text-center justify-content-center">
+            <a class="navbar-brand " href="">Información</a>        
+        </nav>
+
+        <div class="informacion">
+            <p>Trabajador: <b>{{object.trabajador}}</b></p>
+            <p>Correo: <b>{{object.trabajador.email}}</b></p>
+            <p>Telefono: <b>{{object.trabajador.telefono}}</b></p>
+            <p>Empresa: <b>{{object.trabajador.empresa}}</b></p>
+
+            <hr>
+            <p>Técnico: <b>{{object.tecnico}}</b></p>
+            <p>Ticket creado <b>{{object.fecha}}</b></p>
+            {% if object.fecha_resolucion %}
+            <p>Ticket cerrado <b>{{object.fecha_resolucion}}</b></p>
+            {% endif %}
+
+        </div>
+
+    </div>
+    <div class="CONTENIDO">
+        {% include "./menu_ticket.html" %}
+        {% block componente %}{% endblock componente %}
+    </div>
+  </div>
+
+{% endblock contenido %}

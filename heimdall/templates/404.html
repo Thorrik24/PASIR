@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} 403 {% endblock %}
+
+{% block contenido %}
+<div class="error-page d-flex justify-content-center align-items-center mt-5">
+    <div class="error-container text-center">
+        <h2>ERROR</h2>
+        <h1 class="display-1">404</h1>
+        <p class="lead">La página que buscas no fue encontrada.</p>
+        <a href="/" class="btn btn-success btn-lg mt-3">Volver a la página principal</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} 403 {% endblock %}
+
+{% block contenido %}
+<div class="error-page d-flex justify-content-center align-items-center mt-5">
+    <div class="error-container text-center">
+	<h2>ERROR</h2>
+        <h1 class="display-1">403</h1>
+        <p class="lead">No tienes permiso para acceder a esta página.</p>
+        <a href="/" class="btn btn-success btn-lg mt-3">Volver a la página principal</a>
+    </div>
+</div>
+{% endblock %}
+

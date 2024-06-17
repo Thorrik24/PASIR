@@ -1,0 +1,13 @@
+Estimado/a {usuario_nombre},
+
+Nos complace informarle que su ticket con el nº de incidencia '{ticket_id}' ha sido marcado como resuelto.
+
+Su solicitud ha sido atendida satisfactoriamente. Si considera que aún existen problemas o tiene alguna pregunta adicional, no dude en ponerse en contacto con nosotros.
+
+Agradecemos su paciencia y colaboración durante el proceso de resolución.
+
+Gracias por confiar en nosotros para resolver sus problemas.
+
+Saludos cordiales,
+
+@Heimdall

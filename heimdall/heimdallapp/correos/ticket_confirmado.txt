@@ -1,0 +1,15 @@
+Estimado/a {usuario_nombre},
+
+Le informamos que su ticket con el nº de incidencia '{ticket_id}' ha sido confirmado con éxito. Su solicitud está ahora a la espera de ser asignada a un técnico.
+
+Nuestro equipo de soporte se pondrá en contacto con usted en breve para resolver su solicitud.
+
+Agradecemos su paciencia y comprensión mientras procesamos su solicitud.
+
+Si tiene alguna pregunta adicional o necesita más información, no dude en ponerse en contacto con nosotros.
+
+Gracias por su atención.
+
+Saludos cordiales,
+
+@Heimdall

@@ -1,0 +1,48 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block titulo %}{% endblock titulo %}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    {% block dashboard %}{% endblock dashboard %}
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark mt-5">HEIMDALL</h2>
+            <div class="text-center mb-5 text-dark">@albertomave</div>
+            <div class="card my-5">
+    
+              <form class="card-body cardbody-color p-lg-5" method="POST">
+    
+                <div class="text-center">
+                  <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile">
+                </div>
+    
+                <div class="mb-3">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-100">Iniciar Sesión</button></div>
+                </div>
+              </form>
+            </div>
+    
+          </div>
+        </div>
+    </div>
+
+<script src="{% static "js/jquery.min.js" %}"></script>
+<script src="{% static "js/popper.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+</body>

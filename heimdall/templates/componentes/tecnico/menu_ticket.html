@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-submenu">
+    
+  <a class="navbar-brand" href="{% url "heim:detalle_ticket_tecnico" object.id %}">Ticket</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url "heim:registro_ticket_tecnico" object.id %}">Registro de Cambios</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "heim:archivos_ticket_tecnico" object.id %}">Archivos Adjuntos</a>
+        </li>
+        {% if object.estado != "Resuelto" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "heim:escalar_ticket_tecnico" object.id %}">Escalar</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "heim:cerrar_ticket" object.id %}">Cerrar Ticket</a>
+        </li>
+        {% endif %}
+      </ul>
+      
+      {% if aceptar and object.estado != 'Aceptado' and object.tecnico.id == request.user.id and object.estado != 'Resuelto' %}
+
+          <form id="aceptar" class="" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ object.id }}" />
+              <button type="submit" class="btn btn-primary"><i class="fa-regular fa-circle-check"></i>
+                                                                </button>
+          </form>
+
+      {% endif %}
+    </div>
+</nav>

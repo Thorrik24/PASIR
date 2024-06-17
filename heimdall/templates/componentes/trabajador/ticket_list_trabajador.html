@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}LISTADO DE TICKETS{% endblock titulo %}
+
+{% block contenido %}
+<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">TUS TICKETS</h2>
+					<h5>Listado de todos tus tickets</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-13">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th>Nº Incidencia</th>
+						      <th>Trabajador</th>
+						      <th>Categoría</th>
+						      <th>Subcategoría</th>
+						      <th>Fecha</th>
+                              <th>Estado</th>
+                              <th></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                            {% for ticket in tickets %}
+						    <tr>
+						      <td scope="row">{{ ticket.id }}</td>
+						      <td>{{ ticket.trabajador }}</td>
+						      <td>{{ ticket.subcategoria.categoria.problema }}</td>
+						      <td>{{ ticket.subcategoria.subcategoria }}</td>
+						      <td>{{ ticket.fecha }}</td>
+                              <td>{{ ticket.estado }}</td>
+						      <td>
+  {% if ticket.estado == 'Creado' %}
+    <div class="d-flex">
+      <a type="submit" href="{% url 'heim:confirmar_ticket' ticket.id %}" class="btn btn-primary text-center">
+        <i class="fa-regular fa-circle-check"></i>
+      </a>
+      <a type="submit" href="{% url 'heim:eliminar_ticket' ticket.id %}" class="ml-1 btn btn-danger text-center">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </a>
+    </div>
+  {% endif %}
+</td>
+							</tr>
+                            {% endfor %}
+							
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+{% endblock contenido %}
+
+{% block scripts %}
+  <script src="{% static "js/jquery.min.js" %}"></script>
+  <script src="{% static "js/popper.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/main.js" %}"></script>
+{% endblock scripts %}	
+
+

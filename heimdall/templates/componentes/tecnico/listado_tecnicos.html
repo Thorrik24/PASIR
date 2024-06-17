@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+TÉCNICOS
+{% endblock titulo %}
+{% block contenido %}
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 text-center mb-5">
+					<h1 class="heading-section">TÉCNICOS</h1>
+                    <h5>Listado de todos los técnicos disponibles en las diferentes empresas.</h5>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-xl-13">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th>Nombre</th>
+						      <th>Apellidos</th>
+							  <th>Empresa</th>
+						      <th>Correo</th>
+						      <th>Telefono</th>
+						      <th>Usuario</th>
+                              <th>Puesto</th>
+                              <th>Último inicio de sesión</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                            <tr>
+                            {% for trabajador in object_list %}
+                                <td><a href="{% url 'heim:perfiles' trabajador.username %}" class="text-primary">{{trabajador.first_name}}</a></td>
+                                <td>{{trabajador.last_name}}</td>
+                                <td>{{trabajador.empresa}}</td>
+                                <td>{{trabajador.email}}</td>
+                                <td>{{trabajador.telefono}}</td>
+                                <td>{{trabajador.username}}</td>
+                                {% if trabajador.es_administrador %}
+                                    <td>Administrador</td>
+                                {% elif trabajador.es_tecnico %}
+                                    <td>Técnico</td>
+                                {% elif trabajador.is_superuser %}
+                                    <td>Super Administrador</td>
+                                {% endif %}
+                                
+                                <td>{{trabajador.last_login}}</td>
+                            </tr>
+                            {% endfor %}
+							
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock contenido %}
+
+
+  {% comment %} <script src="{% static "js/jquery.min.js" %}"></script>
+  <script src="{% static "js/popper.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/main.js" %}"></script> {% endcomment %}
+
+
